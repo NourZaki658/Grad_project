@@ -1,0 +1,191 @@
+/* Home.css - Fully Responsive */
+
+/* Default Styles (Desktop First) */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background: white;
+  border-bottom: 1px solid #eee;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  font-weight: bold;
+  color: #2d6cdf;
+}
+
+.icon {
+  margin-right: 8px;
+  font-size: 24px;
+}
+
+.nav-linkss {
+  display: flex;
+  gap: 15px;
+  margin-left: auto; /* استخدام auto بدلاً من 750px للتجاوب */
+}
+
+.login {
+  text-decoration: none;
+  padding: 8px 20px;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  font-size: 14px;
+}
+
+.doctor {
+  color: #2d6cdf;
+  background: transparent;
+  border: 2px solid #2d6cdf;
+}
+
+.doctor:hover {
+  background: #2d6cdf;
+  color: white;
+  transform: translateY(-2px);
+}
+
+.patient {
+  background-color: #2d6cdf;
+  color: white;
+  border: none;
+}
+
+.patient:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(45, 108, 223, 0.3);
+}
+
+.login:hover {
+  opacity: 0.9;
+}
+.labs {
+  background-color: #2d6cdf;
+  color: white;
+  border: none;
+}
+
+.labs:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(45, 108, 223, 0.3);
+}
+/* ============================================ */
+/* MEDIA QUERIES FOR RESPONSIVE DESIGN */
+/* ============================================ */
+
+/* Large Screens (Laptops) - 1200px and below */
+@media (max-width: 1200px) {
+  .navbar {
+    padding: 15px 30px;
+  }
+  
+  .nav-linkss {
+    gap: 12px;
+  }
+  
+  .login {
+    padding: 8px 16px;
+  }
+}
+
+/* Medium Screens (Tablets) - 992px and below */
+@media (max-width: 992px) {
+  .navbar {
+    padding: 12px 25px;
+  }
+  
+  .logo {
+    font-size: 18px;
+  }
+  
+  .icon {
+    font-size: 20px;
+  }
+  
+  .login {
+    padding: 7px 14px;
+    font-size: 13px;
+  }
+}
+
+/* Small Screens (Tablets/Mobile) - 768px and below */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    padding: 15px 20px;
+    gap: 15px;
+  }
+  
+  .logo {
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .nav-linkss {
+    margin-left: 0;
+    justify-content: center;
+    width: 100%;
+    gap: 20px;
+  }
+  
+  .login {
+    padding: 10px 25px;
+    font-size: 14px;
+    flex: 0 1 auto;
+  }
+}
+
+/* Extra Small Screens (Mobile Phones) - 576px and below */
+@media (max-width: 576px) {
+  .navbar {
+    padding: 12px 16px;
+  }
+  
+  .logo {
+    font-size: 16px;
+  }
+  
+  .icon {
+    font-size: 18px;
+    margin-right: 6px;
+  }
+  
+  .nav-linkss {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+  }
+  
+  .login {
+    width: 100%;
+    text-align: center;
+    padding: 10px 20px;
+  }
+}
+
+/* Very Small Screens - 375px and below */
+@media (max-width: 375px) {
+  .navbar {
+    padding: 10px 12px;
+  }
+  
+  .logo {
+    font-size: 14px;
+  }
+  
+  .icon {
+    font-size: 16px;
+  }
+  
+  .login {
+    padding: 8px 16px;
+    font-size: 12px;
+  }
+}

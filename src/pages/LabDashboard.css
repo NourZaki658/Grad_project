@@ -1,0 +1,1056 @@
+/* pages/LabDashboard.css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.lab-dashboard-page {
+  min-height: 100vh;
+  background: #f0f2f5;
+}
+
+/* ============================================ */
+/* Lab Topbar Styles (مطابق لـ Topbar الدكتور) */
+/* ============================================ */
+.lab-top-navbar {
+  background: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.lab-nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 32px;
+  height: 70px;
+  max-width: 100%;
+}
+
+/* Logo Section */
+.lab-nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.lab-mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #64748b;
+  padding: 8px;
+  border-radius: 8px;
+}
+
+.lab-mobile-menu-btn:hover {
+  background: #f1f5f9;
+}
+
+.lab-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.lab-logo:hover {
+  transform: scale(1.02);
+}
+
+.lab-logo-icon-wrapper {
+  width: 36px;
+  height: 36px;
+  background: linear-gradient(135deg, #1078b9 0%, #05559692 100%);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(16, 109, 185, 0.3);
+}
+
+.lab-logo-icon {
+  font-size: 20px;
+  color: white;
+}
+
+.lab-logo-text {
+  font-size: 22px;
+  font-weight: 700;
+  background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Right Section */
+.lab-nav-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Welcome Message */
+.lab-welcome-message {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding-right: 10px;
+  border-right: 1px solid #e2e8f0;
+}
+
+.lab-welcome-text {
+  font-size: 11px;
+  color: #94a3b8;
+  letter-spacing: 0.5px;
+}
+
+.lab-welcome-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+/* Notifications */
+.lab-notification-container {
+  position: relative;
+}
+
+.lab-notification-btn {
+  background: #f8fafc;
+  border: none;
+  padding: 10px;
+  border-radius: 12px;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  color: #475569;
+}
+
+.lab-notification-btn:hover {
+  background: #f1f5f9;
+  transform: translateY(-2px);
+}
+
+.lab-notification-badge {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background: #ef4444;
+  color: white;
+  font-size: 10px;
+  padding: 2px 6px;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+.lab-notification-dropdown {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  width: 380px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  overflow: hidden;
+  animation: slideDown 0.2s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.lab-dropdown-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.lab-dropdown-header h4 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.lab-mark-all-read {
+  background: none;
+  border: none;
+  color: #6ea1df;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.lab-notification-list {
+  max-height: 350px;
+  overflow-y: auto;
+}
+
+.lab-notification-item {
+  display: flex;
+  gap: 12px;
+  padding: 12px 20px;
+  cursor: pointer;
+  transition: background 0.2s;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.lab-notification-item:hover {
+  background: #f8fafc;
+}
+
+.lab-notification-item.unread {
+  background: #ecfdf5;
+}
+
+.lab-notification-icon {
+  font-size: 20px;
+}
+
+.lab-notification-content {
+  flex: 1;
+}
+
+.lab-notification-content p {
+  font-size: 13px;
+  color: #1e293b;
+  margin-bottom: 4px;
+}
+
+.lab-notification-content span {
+  font-size: 11px;
+  color: #64748b;
+}
+
+.lab-dropdown-footer {
+  padding: 12px 20px;
+  border-top: 1px solid #e2e8f0;
+  text-align: center;
+}
+
+.lab-view-all {
+  background: none;
+  border: none;
+  color: #6ea1df;
+  font-size: 13px;
+  cursor: pointer;
+  width: 100%;
+}
+
+/* Profile Section */
+.lab-profile-container {
+  position: relative;
+}
+
+.lab-profile-btn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  padding: 6px 16px 6px 10px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.lab-profile-btn:hover {
+  background: #f1f5f9;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.lab-profile-avatar {
+  width: 38px;
+  height: 38px;
+  background: linear-gradient(135deg, #1083b9 0%, #055596 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.lab-profile-info {
+  text-align: left;
+}
+
+.lab-profile-name {
+  font-weight: 600;
+  font-size: 13px;
+  color: #1e293b;
+  margin-bottom: 2px;
+}
+
+.lab-profile-role {
+  font-size: 10px;
+  color: #64748b;
+}
+
+.lab-dropdown-icon {
+  font-size: 12px;
+  color: #64748b;
+  transition: transform 0.2s;
+}
+
+.lab-dropdown-icon.rotated {
+  transform: rotate(180deg);
+}
+
+/* Profile Dropdown */
+.lab-profile-dropdown {
+  position: absolute;
+  top: 55px;
+  right: 0;
+  width: 320px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  overflow: hidden;
+  animation: slideDown 0.2s ease-out;
+}
+
+.lab-dropdown-avatar {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #107bb9 0%, #055296 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.lab-dropdown-user-info h4 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 4px;
+}
+
+.lab-dropdown-user-info p {
+  font-size: 12px;
+  color: #64748b;
+}
+
+.lab-dropdown-menu {
+  padding: 8px 0;
+}
+
+.lab-dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 12px 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  color: #475569;
+  transition: background 0.2s;
+  text-align: left;
+}
+
+.lab-dropdown-item:hover {
+  background: #f8fafc;
+}
+
+.lab-dropdown-item svg {
+  font-size: 16px;
+  color: #64748b;
+}
+
+.lab-dropdown-item.logout-item {
+  color: #ef4444;
+}
+
+.lab-dropdown-item.logout-item svg {
+  color: #ef4444;
+}
+
+.lab-dropdown-menu hr {
+  margin: 8px 0;
+  border: none;
+  border-top: 1px solid #e2e8f0;
+}
+
+/* Mobile Menu */
+.lab-mobile-menu {
+  position: fixed;
+  top: 70px;
+  left: 0;
+  right: 0;
+  background: white;
+  padding: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  z-index: 999;
+  animation: slideDown 0.3s ease-out;
+}
+
+.lab-mobile-nav-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  background: none;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #475569;
+  cursor: pointer;
+  transition: all 0.2s;
+  width: 100%;
+  text-align: left;
+}
+
+.lab-mobile-nav-link:hover {
+  background: #f1f5f9;
+}
+
+.lab-mobile-nav-link.logout {
+  color: #ef4444;
+}
+
+.lab-mobile-divider {
+  margin: 8px 0;
+  border: none;
+  border-top: 1px solid #e2e8f0;
+}
+
+/* Page Header */
+.lab-page-header {
+  background: white;
+  padding: 20px 32px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.lab-page-header-content {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.lab-page-title {
+  font-size: 28px;
+  font-weight: 700;
+  background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 8px;
+}
+
+.lab-page-subtitle {
+  font-size: 14px;
+  color: #64748b;
+}
+
+/* ============================================ */
+/* Dashboard Content Styles */
+/* ============================================ */
+.lab-dashboard-content {
+  padding: 30px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Search Card */
+.lab-search-card {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.lab-search-card h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #1e293b;
+}
+
+.lab-search-box {
+  display: flex;
+  gap: 15px;
+  max-width: 500px;
+}
+
+.lab-search-box input {
+  flex: 1;
+  padding: 12px 16px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.lab-search-box input:focus {
+  outline: none;
+  border-color: #6ea1df;
+  box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.1);
+}
+
+.lab-search-box button {
+  padding: 12px 25px;
+  background: #6ea1df;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+
+.lab-search-box button:hover {
+  background: #059669;
+}
+
+/* No Results */
+.lab-no-results {
+  background: white;
+  border-radius: 12px;
+  padding: 40px;
+  text-align: center;
+  border: 1px solid #e2e8f0;
+}
+
+.lab-no-results-icon {
+  font-size: 48px;
+  color: #ef4444;
+  margin-bottom: 16px;
+}
+
+.lab-no-results h4 {
+  font-size: 18px;
+  color: #1e293b;
+  margin-bottom: 8px;
+}
+
+.lab-no-results p {
+  color: #64748b;
+}
+
+/* Patient Tests Container */
+.lab-patient-tests-container {
+  background: white;
+  border-radius: 12px;
+  padding: 25px;
+  margin-bottom: 30px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Patient Info Header */
+.lab-patient-info-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding-bottom: 20px;
+  margin-bottom: 25px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.lab-patient-avatar {
+  width: 60px;
+  height: 60px;
+  background: #ecfdf5;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lab-patient-avatar svg {
+  font-size: 30px;
+  color: #6ea1df;
+}
+
+.lab-patient-info-details h2 {
+  font-size: 20px;
+  color: #1e293b;
+  margin-bottom: 4px;
+}
+
+.lab-patient-info-details p {
+  font-size: 13px;
+  color: #64748b;
+}
+
+.lab-patient-stats {
+  display: flex;
+  gap: 12px;
+  margin-left: auto;
+}
+
+.lab-stat-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.lab-stat-badge.pending {
+  background: #fef3c7;
+  color: #d97706;
+}
+
+.lab-stat-badge.completed {
+  background: #d1fae5;
+  color: #6ea1df;
+}
+
+/* Tests Section */
+.lab-tests-section {
+  margin-bottom: 30px;
+}
+
+.lab-section-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+.lab-section-title.pending-title {
+  color: #d97706;
+}
+
+.lab-section-title.completed-title {
+  color: #6ea1df;
+}
+
+/* Tests List */
+.lab-tests-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.lab-test-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+  border-radius: 10px;
+  background: #f8fafc;
+  transition: all 0.2s;
+}
+
+.lab-test-card:hover {
+  background: #f1f5f9;
+}
+
+.lab-test-card.pending-card {
+  border-left: 4px solid #f59e0b;
+}
+
+.lab-test-card.completed-card {
+  border-left: 4px solid #6ea1df;
+}
+
+.lab-test-type-icon {
+  width: 40px;
+  height: 40px;
+  background: #ecfdf5;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6ea1df;
+  font-size: 18px;
+}
+
+.lab-test-type-icon.completed-icon {
+  background: #d1fae5;
+  color: #6ea1df;
+}
+
+.lab-test-info {
+  flex: 1;
+}
+
+.lab-test-name {
+  font-size: 15px;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 6px;
+}
+
+.lab-test-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  font-size: 12px;
+  color: #64748b;
+}
+
+.lab-test-details span {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.lab-test-notes {
+  margin-top: 6px;
+  font-size: 12px;
+  color: #6ea1df;
+  font-style: italic;
+}
+
+.lab-upload-btn {
+  padding: 8px 20px;
+  background: #6ea1df;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+
+.lab-upload-btn:hover {
+  background: #6ea1df;
+}
+
+.lab-completed-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.lab-completed-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background: #d1fae5;
+  color: #1083b9;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.lab-view-file-btn {
+  padding: 6px 15px;
+  background: #1083b9;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  transition: background 0.2s;
+}
+
+.lab-view-file-btn:hover {
+  background: #6ea1df;
+}
+
+/* Upload Modal */
+.lab-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.lab-upload-modal {
+  background: white;
+  border-radius: 16px;
+  padding: 30px;
+  max-width: 550px;
+  width: 90%;
+  max-height: 85vh;
+  overflow-y: auto;
+}
+
+.lab-upload-modal h2 {
+  font-size: 22px;
+  color: #1e293b;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #6ea1df;
+}
+
+.lab-upload-test-info {
+  background: #f8fafc;
+  padding: 16px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.lab-info-row {
+  display: flex;
+  margin-bottom: 8px;
+  font-size: 13px;
+}
+
+.lab-info-row:last-child {
+  margin-bottom: 0;
+}
+
+.lab-info-label {
+  width: 110px;
+  font-weight: 600;
+  color: #64748b;
+}
+
+.lab-info-value {
+  flex: 1;
+  color: #1e293b;
+}
+
+.lab-upload-form-group {
+  margin-bottom: 20px;
+}
+
+.lab-upload-form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #1e293b;
+  font-size: 14px;
+}
+
+.lab-file-drop-zone {
+  border: 2px dashed #cbd5e1;
+  border-radius: 10px;
+  padding: 30px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.lab-file-drop-zone:hover {
+  border-color: #6ea1df;
+  background: #f8fafc;
+}
+
+.lab-file-selected {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: #6ea1df;
+}
+
+.lab-file-selected svg {
+  font-size: 30px;
+}
+
+.lab-file-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: #64748b;
+}
+
+.lab-file-placeholder svg {
+  font-size: 36px;
+  color: #94a3b8;
+}
+
+.lab-file-placeholder small {
+  font-size: 11px;
+}
+
+.lab-upload-form-group textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 13px;
+  resize: vertical;
+  font-family: inherit;
+}
+
+.lab-upload-form-group textarea:focus {
+  outline: none;
+  border-color: #6ea1df;
+}
+
+.lab-upload-success {
+  background: #d1fae5;
+  color: #6ea1df;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.lab-upload-modal-buttons {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+.lab-cancel-upload {
+  padding: 10px 24px;
+  background: #ef4444;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.2s;
+}
+
+.lab-cancel-upload:hover {
+  background: #dc2626;
+}
+
+.lab-submit-upload {
+  padding: 10px 24px;
+  background: #6ea1df;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  transition: background 0.2s;
+}
+
+.lab-submit-upload:hover:not(:disabled) {
+  background: #022a3d;
+}
+
+.lab-submit-upload:disabled {
+  background: #94a3b8;
+  cursor: not-allowed;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .lab-nav-container {
+    padding: 0 20px;
+  }
+  
+  .lab-page-header {
+    padding: 16px 20px;
+  }
+  
+  .lab-page-title {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 768px) {
+  .lab-dashboard-content {
+    padding: 15px;
+  }
+  
+  .lab-welcome-message {
+    display: none;
+  }
+  
+  .lab-profile-info {
+    display: none;
+  }
+  
+  .lab-patient-info-header {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .lab-patient-stats {
+    margin-left: 0;
+    justify-content: center;
+  }
+  
+  .lab-test-card {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .lab-test-details {
+    justify-content: center;
+  }
+  
+  .lab-info-row {
+    flex-direction: column;
+  }
+  
+  .lab-info-label {
+    width: 100%;
+    margin-bottom: 4px;
+  }
+  
+  .lab-search-box {
+    flex-direction: column;
+  }
+  
+  .lab-search-box button {
+    justify-content: center;
+  }
+  
+  .lab-upload-modal {
+    padding: 20px;
+  }
+  
+  .lab-upload-modal-buttons {
+    flex-direction: column;
+  }
+  
+  .lab-cancel-upload,
+  .lab-submit-upload {
+    width: 100%;
+    justify-content: center;
+  }
+}
